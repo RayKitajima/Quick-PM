@@ -5,7 +5,7 @@
 		"copyright": "Copyright (c) 2018 Rei Kitajima <rei.kitajima@gmail.com>",
 		"id": "com.craftclay.js.quick-pm"
 	},
-	"name": "Quick PM",
+	"name": "Quick-PM",
 	"description": "Quick API for your service development.",
 	"keywords": [
 		"process manager",
