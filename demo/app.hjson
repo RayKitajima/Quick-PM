@@ -1,0 +1,29 @@
+{
+	Setting : {
+		name     : "Demo",
+		port     : "10088",
+		doc_root : "", // define if you would like to use your own web UI
+	},
+	Services : [
+		// 
+		// demo app writing out counter value to the stdout every sec
+		// 
+		// test:
+		//     $ node demo/app1.js
+		// 
+		// 
+		{
+			name : "DemoApp1",         // should be unique
+			env  : {},                 // will cascade process.env if empty
+			cmd  : "node",
+			args : ["demo/app1.js"],
+		},
+		{
+			name : "DemoApp2",
+			env  : {},                 // merged with process.env if defined
+			cmd  : "node",
+			args : ["demo/app2.js"],
+		}
+	]
+}
+

@@ -1,0 +1,124 @@
+
+* { box-sizing: border-box; margin:0; padding:0; }
+html,body { font-family: "ヒラギノ角ゴ ProN", "Meiryo" }
+
+.Header {
+	display        : flex;
+	flex-direction : row;
+	width          : 80%;
+	margin-left    : auto;
+	margin-right   : auto;
+	margin-top     : 44px;
+}
+
+.Header-name {
+}
+
+.Wrap-Header-power {
+	display         : flex;
+	flex-direction  : row;
+	width           : 100%;
+	justify-content : flex-end;
+
+}
+.Header-power {
+	cursor : pointer;
+}
+.Header-power-on {
+	color : #689f38;
+}
+.Header-power-off {
+	color : #f0f0f0;
+}
+
+.Wrap-Service {
+	width        : 80%;
+	margin-left  : auto;
+	margin-right : auto;
+	margin-top   : 44px;
+}
+
+.Service {
+	padding        : 6px;
+	border-style   : solid;
+	border-color   : #eee;
+	border-width   : 1px 0px 0px 0px;
+}
+.Service:hover {
+	background-color : #fff59d;
+	transition       : .15s ease-out;
+}
+.Service-first {
+	padding : 6px;
+}
+.Service-first:hover {
+	background-color : #fff59d;
+	transition       : .15s ease-out;
+}
+
+.Service-summary {
+	display        : flex;
+	flex-direction : row;
+}
+
+.Service-toggle {
+	width  : 44px;
+	cursor : pointer;
+}
+.Service-toggle-on {
+	display : none;
+	color   : #689f38;
+}
+.Service-toggle-off {
+	display : block;
+	color   : #a0a0a0;
+	cursor  : pointer;
+}
+
+.Service-detail {
+	display        : flex;
+	flex-direction : row;
+	width          : 100%;
+	cursor         : pointer;
+}
+
+.Service-name {
+	width       : 220px;
+	margin-left : 22px;
+	font-weight : bold;
+}
+
+.Service-cmd {
+	width       : 220px;
+	margin-left : 22px;
+	color       : #a0a0a0;
+	font-size   : 12px;
+}
+
+.Service-stdout {
+	display        : none;
+	height         : 200px;
+	padding        : 6px;
+	margin-left    : 66px;
+	margin-top     : 6px;
+	margin-bottom  : 12px;
+	margin-right   : 6px;
+	color          : #689f38;
+	overflow-x     : scroll;
+	overflow-y     : scroll;
+	background-color : #fafafa;
+	border-style   : solid;
+	border-color   : #eee;
+	border-width   : 1px 1px 1px 1px;
+	font-family    : "ヒラギノ角ゴ ProN", "Meiryo"
+	cursor         : pointer;
+}
+
+.Wrap-Service-stdout-pre {
+	height : 100%;
+	cursor : pointer;
+}
+
+.Service-stdout-pre {
+	padding : 6px;
+}

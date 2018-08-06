@@ -1,0 +1,37 @@
+{
+	"about": {
+		"name": "Quick-PM",
+		"author": "Rei Kitajima",
+		"copyright": "Copyright (c) 2018 Rei Kitajima <rei.kitajima@gmail.com>",
+		"id": "com.craftclay.js.quick-pm"
+	},
+	"name": "Quick PM",
+	"description": "Quick API for your service development.",
+	"keywords": [
+		"process manager",
+		"api",
+	],
+	"version": "0.1.0",
+	"author": {
+		"name": "Rei Kitajima",
+		"email": "rei.kitajima@gmail.com"
+	},
+	"maintainers": [
+		{"name": "Rei Kitajima", "email": "rei.kitajima@gmail.com"}
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/RayKitajima/Quick-PM.git"
+	},
+	"preferGlobal": true,
+	"dependencies": {
+		"hjson" : "^3.1.1"
+	},
+	"devDependencies": {
+	},
+	"license": "MIT",
+	"main": "./lib/index.js",
+	"directories": {
+		"lib": "./lib"
+	}
+}
