@@ -13,17 +13,18 @@
 		// 
 		// 
 		{
-			name : "DemoApp1",         // should be unique
-			env  : {},                 // will cascade process.env if empty
-			cmd  : "node",
-			args : ["demo/app1.js"],
+			name  : "DemoApp1",         // should be unique
+			env   : {},                 // will cascade process.env if empty
+			cmd   : "node",
+			args  : ["demo/app1.js"],
+			start : true,               // default true, here explicitly set true
 		},
 		{
-			name : "DemoApp2",
-			env  : {},                 // merged with process.env if defined
-			cmd  : "node",
-			args : ["demo/app2.js"],
+			name  : "DemoApp2",
+			env   : {},                 // merged with process.env if defined
+			cmd   : "node",
+			args  : ["demo/app2.js"],
+			start : false,              // dont start this service at start up
 		}
 	]
 }
-
