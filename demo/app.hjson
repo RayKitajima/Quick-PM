@@ -1,8 +1,9 @@
 {
 	Setting : {
 		name     : "Demo",
-		port     : "10088",
-		doc_root : "", // define if you would like to use your own web UI
+		port     : 10088,
+		doc_root : "",       // define if you would like to use your own web UI
+		merge    : true,     // get single array to show merged stdout and stderr across all Services
 	},
 	Services : [
 		// 
@@ -18,13 +19,15 @@
 			cmd   : "node",
 			args  : ["demo/app1.js"],
 			start : true,               // default true, here explicitly set true
+			merge : true,               // merge stderr to stdout
 		},
 		{
 			name  : "DemoApp2",
-			env   : {},                 // merged with process.env if defined
+			env   : {},
 			cmd   : "node",
 			args  : ["demo/app2.js"],
-			start : false,              // dont start this service at start up
+			start : false,
+			merge : true,
 		}
 	]
 }

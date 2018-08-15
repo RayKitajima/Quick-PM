@@ -89,7 +89,7 @@ html,body { font-family: "ヒラギノ角ゴ ProN", "Meiryo" }
 }
 
 .Service-cmd {
-	width       : 220px;
+	width       : 100%;
 	margin-left : 22px;
 	color       : #a0a0a0;
 	font-size   : 12px;

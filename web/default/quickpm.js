@@ -182,6 +182,38 @@ window.QPM.Func.stdout_hide = function(name){
 
 // *    *    *    *    *    *    *    *    *    *    *    *    *    *    *    *    *    *    *    * 
 
+window.QPM.Func.toggle_console = function(){
+	if( QPM.console_display ){
+		QPM.Func.console_hide();
+	}else{
+		QPM.Func.console_show();
+	}
+};
+
+window.QPM.Func.console_show = function(){
+	QPM.Func.ajax('/api/console',function(responseText){
+		var result = JSON.parse(responseText);
+		var merged_console = result.Console.join("");
+		var ui = $("#merged_console");
+		ui.css('display','block');
+		ui.html(`
+			<div class="Wrap-Service-stdout-pre" onclick="QPM.Func.console_show();event.stopPropagation();" title="click to reload console">
+			<pre class="Service-stdout-pre">${merged_console}<pre>
+			</div>
+		`);
+		ui.scrollTop(ui[0].scrollHeight);
+		QPM.console_display = true;
+	});
+};
+
+window.QPM.Func.console_hide = function(){
+	var ui = $("#merged_console");
+	ui.css('display','none');
+	QPM.console_display = false;
+};
+
+// *    *    *    *    *    *    *    *    *    *    *    *    *    *    *    *    *    *    *    * 
+
 window.QPM.Template = {};
 
 window.QPM.Template.body = Handlebars.compile(`
@@ -196,6 +228,26 @@ window.QPM.Template.body = Handlebars.compile(`
 			</div>
 		</div>
 	</div>
+	
+	{{#if Config.Setting.merge}}
+	<div class="Wrap-Service">
+	<div class="Service-first">
+		<div class="Service-summary">
+			<div class="Service-toggle">
+			</div>
+			<div class="Service-detail" onclick="QPM.Func.toggle_console();event.stopPropagation();" title="click to toggle console">
+				<div class="Service-name">
+					Console
+				</div>
+				<div class="Service-cmd">
+					All of stdout and stderr across services.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="merged_console" class="Service-stdout" style="height:300px;"></div>
+	</div>
+	{{/if}}
 	
 	<div class="Wrap-Service">
 	{{#Config.Services}}

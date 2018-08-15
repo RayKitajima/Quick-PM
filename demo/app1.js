@@ -15,7 +15,6 @@ server.listen(10091,function(){
 	
 	setInterval(function(){
 		counter++;
-		console.log("[DemoApp1] "+counter);
+		console.log("count: "+counter);
 	},1000);
 });
-
