@@ -18,6 +18,7 @@ $ quick-pm service.hjson
 
 ``` 
 /api/status?name=<name>  : get status for <name> (get all w/o name)
+/api/console             : get merged stdout/stderr across all services
 /api/stdout?name=<name>  : get stdout for <name>
 /api/stderr?name=<name>  : get stderr for <name>
 /api/start?name=<name>   : start <name>
